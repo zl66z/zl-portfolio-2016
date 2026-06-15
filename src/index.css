@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+/* 深色主题与设计令牌 — 见 AGENTS.md */
+@theme {
+  --color-bg-primary: #0a0a0a;
+  --color-bg-secondary: #141414;
+  --color-bg-card: #1a1a1a;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #a3a3a3;
+  --color-border: #2a2a2a;
+  --color-accent-from: #6366f1;
+  --color-accent-to: #a855f7;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-bg-primary text-text-primary antialiased;
+    margin: 0;
+    font-family: system-ui, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+}
+
+/* 渐变色强调工具类 */
+@utility text-gradient {
+  background: linear-gradient(135deg, var(--color-accent-from), var(--color-accent-to));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility bg-gradient-accent {
+  background: linear-gradient(135deg, var(--color-accent-from), var(--color-accent-to));
+}
